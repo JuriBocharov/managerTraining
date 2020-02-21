@@ -9,7 +9,6 @@ import (
 func main() {
 	port := "8080"
 	log.Printf("Установлен порт по умолчанию %s", port)
-	log.Printf("Слушаем порт %s", port)
 	log.Printf("Откройте http://localhost:%s в своем браузере", port)
 
 	http.HandleFunc("/", indexHandler)

@@ -13,9 +13,6 @@ func main() {
 	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, "<h1>Это страница About</h1>")
 	})
-	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "hello.html")
-	})
 
 	log.Printf("Установлен порт по умолчанию %s", port)
 	log.Printf("Откройте http://localhost:%s в своем браузере", port)
@@ -27,8 +24,8 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
-	_, err := fmt.Fprint(w, "<h1>Привет! Главна стрница.</h1>")
-	if err != nil {
-		w.WriteHeader(http.StatusInternalServerError)
-	}
+
+	http.ServeFile(w, r, "view/header.html")
+	http.ServeFile(w, r, "view/body.tmpl")
+	http.ServeFile(w, r, "view/footer.tmpl")
 }
