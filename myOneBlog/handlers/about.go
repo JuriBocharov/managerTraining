@@ -5,16 +5,19 @@ import (
 	"net/http"
 )
 
-func home() http.HandlerFunc {
+func about() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
 		data := PageData{
-			Title:       "Главная",
-			Description: "Мой первый блог на Golang",
+			Title:       "Контакты",
+			Description: "Информация как со мной связаться",
 		}
 
 		header, _ := template.ParseFiles("web/header.gohtml")
 		header.Execute(w, data)
+
+		body, _ := template.ParseFiles("web/about.gohtml")
+		body.Execute(w, nil)
 
 		footer, _ := template.ParseFiles("web/footer.gohtml")
 		footer.Execute(w, nil)
