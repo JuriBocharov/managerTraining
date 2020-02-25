@@ -11,9 +11,9 @@ func Router() *mux.Router {
 
 	rout.HandleFunc("/", home()).Methods("GET")
 	rout.HandleFunc("/post/{id:[0-9]+}", detail()).Methods("GET")
+
 	// This will serve files under http://localhost:8080/assets/css//<filename>
-	dir := "assets/css/"
-	rout.PathPrefix("/assets/css/").Handler(http.StripPrefix("/assets/css/", http.FileServer(http.Dir(dir))))
+	rout.PathPrefix("/assets/css/").Handler(http.StripPrefix("/assets/css/", http.FileServer(http.Dir("assets/css/"))))
 
 	return rout
 }
