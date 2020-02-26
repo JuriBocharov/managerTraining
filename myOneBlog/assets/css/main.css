@@ -1,17 +1,17 @@
-menu {
+nav {
     background: #03658e;    /* цвет фона навигационной панели */
 }
-menu a {
+nav a {
     display: block; /* ссылка растягивается на весь пункт li */
     padding: 5px 15px; /* задаем внутренние отступы */
     color: #fff; /* цвет текста */
     text-decoration: none; /* убрать нижнее подчёркивание у ссылок */
 }
 
-menu a:hover {
+nav a:hover {
     background: #8AB8CC; /* фон пунктов при наведении */
 }
-menu li{
+nav li{
     display:inline-block; /* расположить пункты горизонтально */
 }
 footer {
