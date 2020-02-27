@@ -13,7 +13,7 @@
   });
 
 
-  $(document).ready(function(){  
+  $(document).ready(function(){
 
     //active menu
     $(document).on("scroll", onScroll);
@@ -90,7 +90,7 @@
 
     //typed js
     $(".typed").typed({
-        strings: ["Меня зовут Юрий ", "Я Web программист", "Backend, php, Go...", "Да и просто красавчег"],
+        strings: ["Меня зовут Юрий ", "Я Web программист", "Backend, php, Go..."],
         typeSpeed: 100,
         backDelay: 900,
         // loop
