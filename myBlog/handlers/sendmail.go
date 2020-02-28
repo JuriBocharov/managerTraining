@@ -1,4 +1,4 @@
-package base
+package handlers
 
 import (
 	"net/smtp"
@@ -38,7 +38,9 @@ func send(toSend string, subject string, message string) sendResult {
 	// форматирование неверно для стиля RFC 822
 	sendMessage := `To: User <` + toSend + `>
 From: "Other User" <` + from + `>
-Subject: ` + subject
+Subject: ` + subject + `
+
+` + message
 
 	err := smtp.SendMail(host, auth, from, []string{toSend}, []byte(sendMessage))
 	if err != nil {

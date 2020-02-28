@@ -8,7 +8,6 @@ import (
 type PageData struct {
 	Title       string
 	Description string
-	Status      bool
 }
 
 func Router() *mux.Router {
